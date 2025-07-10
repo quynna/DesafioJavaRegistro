@@ -59,4 +59,68 @@ La contraseña debe:
     }
   ]
 }
+{
+  "id": "e2a1a1a3-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "name": "Juan Pérez",
+  "email": "juan@example.com",
+  "password": "Abc12345",
+  "phones": [...],
+  "created": "2025-07-10T15:30:45.108",
+  "modified": "2025-07-10T15:30:45.108",
+  "lastLogin": "2025-07-10T15:30:45.108",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "active": true
+}
 
+🔸 Errores posibles
+400 BAD REQUEST: Campos inválidos
+
+Contraseña inválida
+
+Email ya registrado
+
+500 INTERNAL SERVER ERROR: Fallo al guardar usuario
+
+🧪 Cómo probar la API
+Ejecutar la app:
+
+
+./gradlew bootRun
+Probar con Postman:
+
+URL: http://localhost:8080/api/registro
+
+Método: POST
+
+Body: JSON (como el ejemplo de arriba)
+
+Verificar los datos en la consola H2:
+
+Navegar a http://localhost:8080/h2-console
+
+JDBC URL: jdbc:h2:mem:usuariosdb
+
+Usuario: sa, Password: (vacío)
+
+Tablas: USERS, PHONE
+
+🔒 Token JWT
+Al registrar un usuario exitosamente, se genera un token JWT firmado con HS256, que identifica al usuario. Este token se devuelve en la respuesta.
+
+⚙️ Configuración (application.properties)
+properties
+spring.datasource.url=jdbc:h2:mem:usuariosdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.jpa.hibernate.ddl-auto=update
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+spring.jpa.show-sql=true
+jwt.secret=mysecretkey
+📂 Clonar y ejecutar
+
+git clone https://github.com/tu-usuario/desafio-usuarios-api.git
+cd desafio-usuarios-api
+./gradlew bootRun
+👨‍💻 Autor
+Evelik Quezada Muñoz
+Desarrollador Backend Java | Spring Boot
