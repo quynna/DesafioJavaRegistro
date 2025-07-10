@@ -1,0 +1,34 @@
+{
+  "info": {
+    "_postman_id": "d7e4a4f5-4e2e-43e4-9f84-df45bb6deda2",
+    "name": "Desafío - Registro Usuario",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Registrar Usuario",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Juan Rodriguez\",\n  \"email\": \"juan@rodriguez.org\",\n  \"password\": \"Abcde12\",\n  \"phones\": [\n    {\n      \"number\": \"1234567\",\n      \"citycode\": \"1\",\n      \"contrycode\": \"57\"\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/registro",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "registro"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
