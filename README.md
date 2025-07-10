@@ -59,6 +59,9 @@ La contraseña debe:
     }
   ]
 }
+🔹 Respuesta Exitosa (201)
+json
+
 {
   "id": "e2a1a1a3-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "name": "Juan Pérez",
@@ -71,6 +74,8 @@ La contraseña debe:
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
   "active": true
 }
+
+
 
 🔸 Errores posibles
 400 BAD REQUEST: Campos inválidos
